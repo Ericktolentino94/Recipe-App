@@ -13,6 +13,7 @@ function App() {
     <>
       <div>
         <Home />
+        
         <Nav />
         
        </div>
