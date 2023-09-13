@@ -20,17 +20,17 @@ const Home = () => {
   return (
     <div>
       <h1>Recipes</h1>
-      <ul>
+      <div>
         {recipes.map((recipe) => (
-          <li key={recipe.idMeal}>
+          <section key={recipe.idMeal}>
+              <h1>{recipe.strMeal}</h1>
             <img
               src={recipe.strMealThumb} 
               alt={recipe.strMeal} 
             />
-            {recipe.strMeal}
-          </li>
+          </section>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
