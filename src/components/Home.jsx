@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAllRecipes } from "../api/fetch";
 import "../components/Home.css"
-import {Link} from 'react-router-dom'
 
 
 const Home = () => {
@@ -22,6 +21,15 @@ const Home = () => {
 
   return (
     <div>
+        <input
+        type="text"
+        placeholder="Search for Recipes"
+        value=""
+        className="search-bar"
+      />
+      <button className="btn">
+        Search
+      </button>
       <h1>Recipes</h1>
         <button>Create a recipe</button>
       <div>
