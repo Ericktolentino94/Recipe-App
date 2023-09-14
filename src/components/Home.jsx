@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { getAllRecipes } from "../api/fetch";
+import "../components/Home.css"
 import {Link} from 'react-router-dom'
+
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
@@ -21,14 +23,19 @@ const Home = () => {
   return (
     <div>
       <h1>Recipes</h1>
+        <button>Create a recipe</button>
       <div>
         {recipes.map((recipe) => (
-          <section key={recipe.idMeal}>
+          <section className="individualCard" key={recipe.idMeal}>
               <h1>{recipe.strMeal}</h1>
             <img
               src={recipe.strMealThumb} 
               alt={recipe.strMeal} 
-            />
+              style={{height:"200px"}}
+              />
+            <p>{recipe.strInstructions}</p>
+            <button>Remove</button>
+            <button>Leave comment</button>
           </section>
         ))}
       </div>
