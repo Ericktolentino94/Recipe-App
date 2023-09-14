@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAllRecipes } from "../api/fetch";
+import {Link} from 'react-router-dom'
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
