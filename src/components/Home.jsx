@@ -1,51 +1,78 @@
 import { useState, useEffect } from "react";
 import { getAllRecipes } from "../api/fetch";
-import "../components/Home.css"
-
+import "../components/Home.css";
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchedQuery, setSearchedQuery] = useState("");
 
   useEffect(() => {
-    getAllRecipes()
-      .then((data) => {
-        console.log("Fetched data:", data);
-        if (data) {
-          setRecipes(data);
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching recipes:", error);
-      });
-  }, []);
+    if (searchedQuery.trim() === "") {
+      
+      getAllRecipes()
+        .then((data) => {
+          console.log("Fetched data:", data);
+          if (data) {
+            setRecipes(data);
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching recipes:", error);
+        });
+    } else {
+      
+      fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchedQuery}`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.meals) {
+            setRecipes(data.meals);
+          } else {
+            setRecipes([]); 
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching recipes:", error);
+        });
+    }
+  }, [searchedQuery]);
+
+  const handleSearch = () => {
+    setSearchedQuery(searchQuery);
+  };
 
   return (
     <div>
-        <input
+      <input
         type="text"
         placeholder="Search for Recipes"
-        value=""
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
         className="search-bar"
       />
-      <button className="btn">
+      <button onClick={handleSearch} className="btn">
         Search
       </button>
       <h1>Recipes</h1>
-        <button>Create a recipe</button>
+      <button>Create a recipe</button>
       <div>
-        {recipes.map((recipe) => (
-          <section className="individualCard" key={recipe.idMeal}>
+        {recipes.length > 0 ? (
+          recipes.map((recipe) => (
+            <section className="individualCard" key={recipe.idMeal}>
               <h1>{recipe.strMeal}</h1>
-            <img
-              src={recipe.strMealThumb} 
-              alt={recipe.strMeal} 
-              style={{height:"200px"}}
+              <img
+                src={recipe.strMealThumb}
+                alt={recipe.strMeal}
+                style={{ height: "200px" }}
               />
-            <p>{recipe.strInstructions}</p>
-            <button>Remove</button>
-            <button>Leave comment</button>
-          </section>
-        ))}
+              <p>{recipe.strInstructions}</p>
+              <button>Remove</button>
+              <button>Leave comment</button>
+            </section>
+          ))
+        ) : (
+          <p className="non-search">No recipes found. Try a different food ingredient.</p>
+        )}
       </div>
     </div>
   );
