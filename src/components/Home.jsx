@@ -5,7 +5,7 @@ import "../components/Home.css";
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchedQuery, setSearchedQuery] = useState("");
+  const [searchedQuery, setSearchedQuery] = useState(""); 
 
   useEffect(() => {
     if (searchedQuery.trim() === "") {
@@ -38,7 +38,14 @@ const Home = () => {
   }, [searchedQuery]);
 
   const handleSearch = () => {
+    
     setSearchedQuery(searchQuery);
+  };
+
+  const handleRemove = (recipeId) => {
+   
+    const updatedRecipes = recipes.filter((recipe) => recipe.idMeal !== recipeId);
+    setRecipes(updatedRecipes);
   };
 
   return (
@@ -66,12 +73,11 @@ const Home = () => {
                 style={{ height: "200px" }}
               />
               <p>{recipe.strInstructions}</p>
-              <button>Remove</button>
-              <button>Leave comment</button>
+              <button onClick={() => handleRemove(recipe.idMeal)}>Remove</button>
             </section>
           ))
         ) : (
-          <p className="non-search">No recipes found. Try a different food ingredient.</p>
+          <p className="non-search">No recipes found. Try a different search term.</p>
         )}
       </div>
     </div>
