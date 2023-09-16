@@ -74,7 +74,6 @@ const Home = () => {
               />
               <p>{recipe.strInstructions}</p>
               <button onClick={() => handleRemove(recipe.idMeal)}>Remove</button>
-              <button>Leave comment</button>
             </section>
           ))
         ) : (
