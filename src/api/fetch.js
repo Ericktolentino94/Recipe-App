@@ -1,4 +1,5 @@
-const _BASE_URL = "https://www.themealdb.com/api/json/v1/1/";
+const KEY = import.meta.env.VITE_BASE_API_KEY
+const _BASE_URL = `https://www.themealdb.com/api/json/v2/${KEY}/`;
 
 export function getAllRecipes() {
   const endpoint = "search.php?f=a";
