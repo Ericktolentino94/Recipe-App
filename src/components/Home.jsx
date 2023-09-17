@@ -1,54 +1,57 @@
-const KEY = import.meta.env.VITE_BASE_API_KEY
-import { useState, useEffect } from "react";
-import { getAllRecipes } from "../api/fetch";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getAllRecipes } from "../api/fetch";
 import "../components/Home.css";
 import CreateRecipe from "./CreateRecipe";
 
-
-const Home = () => {
-  const [recipes, setRecipes] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchedQuery, setSearchedQuery] = useState(""); 
-
+const Home = ({
+  recipes,
+  setRecipes,
+  searchQuery,
+  setSearchQuery,
+  searchedQuery,
+  setSearchedQuery,
+}) => {
   useEffect(() => {
-    if (searchedQuery.trim() === "") {
-      
-      getAllRecipes()
-        .then((data) => {
+    const fetchRecipes = async () => {
+      if (searchedQuery.trim() === "") {
+       
+        try {
+          const data = await getAllRecipes();
           console.log("Fetched data:", data);
           if (data) {
             setRecipes(data);
           }
-        })
-        .catch((error) => {
+        } catch (error) {
           console.error("Error fetching recipes:", error);
-        });
-    } else {
-      
-      fetch(`https://www.themealdb.com/api/json/v2/${KEY}/search.php?s=${searchedQuery}`)
-        .then((response) => response.json())
-        .then((data) => {
+        }
+      } else {
+       
+        const KEY = import.meta.env.VITE_BASE_API_KEY;
+        try {
+          const response = await fetch(
+            `https://www.themealdb.com/api/json/v2/${KEY}/search.php?s=${searchedQuery}`
+          );
+          const data = await response.json();
           if (data.meals) {
             setRecipes(data.meals);
           } else {
-            setRecipes([]); 
+            setRecipes([]);
           }
-        })
-        .catch((error) => {
+        } catch (error) {
           console.error("Error fetching recipes:", error);
-        });
-    }
-  }, [searchedQuery]);
+        }
+      }
+    };
+
+    fetchRecipes();
+  }, [searchedQuery, setRecipes]);
 
   const handleSearch = () => {
-    
     setSearchedQuery(searchQuery);
   };
 
-
   const handleRemove = (recipeId) => {
-   
     const updatedRecipes = recipes.filter((recipe) => recipe.idMeal !== recipeId);
     setRecipes(updatedRecipes);
   };
@@ -84,7 +87,9 @@ const Home = () => {
             </section>
           ))
         ) : (
-          <p className="non-search">No recipes found. Try a different search term.</p>
+          <p className="non-search">
+            No recipes found. Try a different search term.
+          </p>
         )}
       </div>
     </div>
