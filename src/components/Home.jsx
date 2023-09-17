@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getAllRecipes } from "../api/fetch";
 import "../components/Home.css";
+import CreateRecipe from "./CreateRecipe";
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
