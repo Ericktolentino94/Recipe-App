@@ -34,8 +34,22 @@ useEffect(() => {
 return (
     <div>
         <div className="recipeShow">
-            <img src= {} />
-            <h2 className="title">{}</h2>
+        {recipe.length > 0 ? (
+          recipe.map((recipeinfo) => (
+            <section className="individualCard" key={recipeinfo.idMeal}>
+              <img
+                src={recipeinfo.strMealThumb}
+                alt={recipeinfo.strMeal}
+                style={{ height: "200px" }}
+              />
+              <h1>{recipeinfo.strMeal}</h1>
+              <p>{recipeinfo.strInstructions}</p>
+              <button onClick={() => handleRemove(recipeinfo.idMeal)}>Remove</button>
+            </section>
+          ))
+        ) : (
+          <p className="non-search">No recipe found. Try a different recipe</p>
+        )}
         </div>
         <div>
             <commentForm />
