@@ -42,6 +42,8 @@ const Home = () => {
     setSearchedQuery(searchQuery);
   };
 
+  
+
   return (
     <div>
       <input
@@ -55,7 +57,7 @@ const Home = () => {
         Search
       </button>
       <h1>Recipes</h1>
-      <button>Create a recipe</button>
+      <button><Link to="/CreateRecipe/new">Create a recipe</Link></button>
       <div>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
