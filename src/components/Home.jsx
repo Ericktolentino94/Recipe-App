@@ -2,6 +2,7 @@ const KEY = import.meta.env.VITE_BASE_API_KEY
 import { useState, useEffect } from "react";
 import { getAllRecipes } from "../api/fetch";
 import "../components/Home.css";
+import CreateRecipe from "./CreateRecipe";
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
@@ -43,6 +44,7 @@ const Home = () => {
     setSearchedQuery(searchQuery);
   };
 
+
   const handleRemove = (recipeId) => {
    
     const updatedRecipes = recipes.filter((recipe) => recipe.idMeal !== recipeId);
@@ -62,7 +64,7 @@ const Home = () => {
         Search
       </button>
       <h1>Recipes</h1>
-      <button>Create a recipe</button>
+      <button><Link to="/CreateRecipe/new">Create a recipe</Link></button>
       <div>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
