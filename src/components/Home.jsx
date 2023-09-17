@@ -72,11 +72,13 @@ const Home = () => {
           recipes.map((recipe) => (
             <section className="individualCard" key={recipe.idMeal}>
               <h1>{recipe.strMeal}</h1>
-              <img
-                src={recipe.strMealThumb}
-                alt={recipe.strMeal}
-                style={{ height: "200px" }}
-              />
+              <Link to={`/RecipeShow/${recipe.idMeal}`}>
+                <img
+                  src={recipe.strMealThumb}
+                  alt={recipe.strMeal}
+                  style={{ height: "200px" }}
+                />
+              </Link>
               <p>{recipe.strInstructions}</p>
               <button onClick={() => handleRemove(recipe.idMeal)}>Remove</button>
             </section>
