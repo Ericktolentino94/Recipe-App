@@ -36,8 +36,8 @@ export function getOneRecipe(id) {
     return response.json();
   })
   .then((data) => {
-    if (data.meals && Array.isArray(data.meals)) {
-      return data.meals;
+    if (data && Array.isArray(data)) {
+      return data;
     } else {
       throw new Error("Invalid API response: 'meals' property not found.");
     }
