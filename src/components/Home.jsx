@@ -1,3 +1,4 @@
+const KEY = import.meta.env.VITE_BASE_API_KEY
 import { useState, useEffect } from "react";
 import { getAllRecipes } from "../api/fetch";
 import "../components/Home.css";
@@ -22,7 +23,7 @@ const Home = () => {
         });
     } else {
       
-      fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchedQuery}`)
+      fetch(`https://www.themealdb.com/api/json/v2/${KEY}/search.php?s=${searchedQuery}`)
         .then((response) => response.json())
         .then((data) => {
           if (data.meals) {

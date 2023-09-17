@@ -1,3 +1,4 @@
+const KEY = import.meta.env.VITE_BASE_API_KEY
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "./RecipeShow.css";
@@ -10,15 +11,27 @@ export default function RecipeShow() {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    useEffect(() => {
-        getOneRecipe(id)
-        .then((recipeData) => {
-            setVideo(recipeData.items);
-        }
-    )})
+useEffect(() => {
+    getOneRecipe(id)
+        .then((data) => {
+            setRecipe(data)
+        })
+    fetch(`https://www.themealdb.com/api/json/v2/${KEY}/lookup.php?i=${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.meals) {
+        setRecipe(data.meals);
+      } else {
+        setRecipe([]); 
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching recipes:", error);
+    });
+}, [id]);
     
-}
-return(
+
+return (
     <div>
         <div className="recipeShow">
             <img src= {} />
@@ -30,3 +43,5 @@ return(
     </div>
 
 )
+
+}
