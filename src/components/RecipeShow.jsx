@@ -1,41 +1,33 @@
-const KEY = import.meta.env.VITE_BASE_API_KEY
 import { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import "./RecipeShow.css";
-// import ErrorMessage from "../errors/ErrorMessage";
+import { useParams, useNavigate } from "react-router-dom";
 import { getOneRecipe } from "../api/fetch";
-// import {commentForm} from "./CommentForm";
+import "./RecipeShow.css";
 
 export default function RecipeShow() {
-    const [recipe, setRecipe] = useState({});
-    const { id } = useParams();
-    const navigate = useNavigate();
+  const [individual, setIndividual] = useState([]);
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-useEffect(() => {
+  useEffect(() => {
     getOneRecipe(id)
-        .then((data) => {
-            setRecipe(data)
-        })
-    // fetch(`https://www.themealdb.com/api/json/v2/${KEY}/lookup.php?i=${id}`)
-    // .then((response) => response.json())
-    // .then((data) => {
-    //   if (data.meals) {
-    //     setRecipe(data.meals);
-    //   } else {
-    //     setRecipe([]); 
-    //   }
-    // })
-    // .catch((error) => {
-    //   console.error("Error fetching recipes:", error);
-    // });
-}, [id]);
-    
 
-return (
+      .then((data) => {
+        console.log("Data received:", data);
+        setIndividual(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching recipe:", error);
+      });
+  }, [id]);
+  
+
+
+  return (
     <div>
         <div className="recipeShow">
-        {recipe.length > 0 ? (
-          recipe.map((recipeinfo) => (
+        {individual.length > 0 ? (
+          individual.map((recipeinfo) => (
+
             <section className="individualRecipeCard" key={recipeinfo.idMeal}>
                 <h1>{recipeinfo.strMeal}</h1>
               <img
@@ -63,10 +55,9 @@ return (
         )}
         </div>
         <div>
-            <commentForm />
+            {/* <commentForm /> */}
         </div>
     </div>
 
 )
-
 }
