@@ -1,8 +1,10 @@
 const KEY = import.meta.env.VITE_BASE_API_KEY
 import { useState, useEffect } from "react";
 import { getAllRecipes } from "../api/fetch";
+import { Link } from "react-router-dom";
 import "../components/Home.css";
 import CreateRecipe from "./CreateRecipe";
+
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
@@ -64,7 +66,7 @@ const Home = () => {
         Search
       </button>
       <h1>Recipes</h1>
-      <button><Link to="/CreateRecipe/new">Create a recipe</Link></button>
+      <Link to="/CreateRecipe">Create a recipe</Link>
       <div>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
