@@ -4,7 +4,9 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import About from './components/About'; 
 import RecipeShow from './components/RecipeShow';
+
 import CreateRecipe from './components/CreateRecipe';
+
 
 function App() {
   return (
@@ -15,8 +17,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} /> 
+
             <Route path="/CreateRecipe" element={<CreateRecipe />} />
             <Route path="/RecipeShow/:id" element={<RecipeShow />} />
+
 
 
 

@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getOneRecipe } from "../api/fetch";
 import "./RecipeShow.css";
 
-
 export default function RecipeShow() {
   const [individual, setIndividual] = useState([]);
   const { id } = useParams();
@@ -11,6 +10,7 @@ export default function RecipeShow() {
 
   useEffect(() => {
     getOneRecipe(id)
+
       .then((data) => {
         console.log("Data received:", data);
         setIndividual(data);
@@ -21,11 +21,13 @@ export default function RecipeShow() {
   }, [id]);
   
 
+
   return (
     <div>
         <div className="recipeShow">
         {individual.length > 0 ? (
           individual.map((recipeinfo) => (
+
             <section className="individualRecipeCard" key={recipeinfo.idMeal}>
                 <h1>{recipeinfo.strMeal}</h1>
               <img
