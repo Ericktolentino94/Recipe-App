@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllRecipes } from "../api/fetch";
 import "../components/Home.css";
-import CreateRecipe from "./CreateRecipe";
 
 const Home = ({
   recipes,
@@ -15,10 +14,8 @@ const Home = ({
   useEffect(() => {
     const fetchRecipes = async () => {
       if (searchedQuery.trim() === "") {
-       
         try {
           const data = await getAllRecipes();
-          console.log("Fetched data:", data);
           if (data) {
             setRecipes(data);
           }
@@ -26,7 +23,6 @@ const Home = ({
           console.error("Error fetching recipes:", error);
         }
       } else {
-       
         const KEY = import.meta.env.VITE_BASE_API_KEY;
         try {
           const response = await fetch(
@@ -56,6 +52,27 @@ const Home = ({
     setRecipes(updatedRecipes);
   };
 
+  const [formData, setFormData] = useState({ name: '', email: '', summary: '', imageUrl: '' });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((oldFormData) => ({ ...oldFormData, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newRecipe = {
+      idMeal: Math.random().toString(),
+      strMeal: formData.name,
+      strMealThumb: formData.imageUrl, 
+      strInstructions: formData.summary,
+    };
+
+    setRecipes((prevRecipes) => [...prevRecipes, newRecipe]);
+    setFormData({ name: '', email: '', summary: '', imageUrl: '' }); 
+  };
+
   return (
     <div>
       <input
@@ -69,20 +86,29 @@ const Home = ({
         Search
       </button>
       <h1>Recipes</h1>
-      <Link to="/CreateRecipe">Create a recipe</Link>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
+
+        <label htmlFor="imageUrl">Image URL:</label>
+        <input type="url" id="imageUrl" name="imageUrl" value={formData.imageUrl} onChange={handleChange} />
+
+        <label htmlFor="summary">Summary:</label>
+        <textarea id="summary" name="summary" value={formData.summary} onChange={handleChange} />
+
+        <button type="submit">Submit</button>
+      </form>
       <div>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
             <section className="individualCard" key={recipe.idMeal}>
               <h1>{recipe.strMeal}</h1>
-
               <Link to={`/RecipeShow/${recipe.idMeal}`}>
                 <img
                   src={recipe.strMealThumb}
                   alt={recipe.strMeal}
                   style={{ height: "200px" }}
                 />
-
               </Link>
               <p>{recipe.strInstructions}</p>
               <button onClick={() => handleRemove(recipe.idMeal)}>Remove</button>
