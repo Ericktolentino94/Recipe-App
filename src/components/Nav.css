@@ -1,4 +1,3 @@
-/* Set the background image for the navigation bar */
 .nav-bar {
     display: flex;
     flex-direction: column;
@@ -6,63 +5,71 @@
     align-items: center;
     padding: 10px 20px;
     background-image: url('https://b2066476.smushcdn.com/2066476/wp-content/uploads/2018/10/25698-TSET-19-04-SYF-Website-Refresh_Header_5FoodGroups_F.jpg?lossy=1&strip=1&webp=1');
-    background-size: cover; /* Cover the entire element with the background image */
-    background-repeat: no-repeat; /* Prevent image repetition */
-    background-position: center center; /* Center the image both horizontally and vertically */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     height: 200px;
 }
 
-
-
-/* Style the header logo */
 .header-logo {
-    max-width: 100%; /* Ensure the image doesn't exceed its container */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
 }
 
-/* Style the navigation heading */
 .navhead {
     color: red;
     background-color: #ffffff;
-    font-size: 100px; /* Increase font size for better readability */
-    font-weight: bold; /* Make the heading bold */
-    margin: 0; /* Remove default margin */
-    
+    font-size: 100px;
+    font-weight: bold;
+    margin: 0;
 }
 
-/* Style the navigation links */
 .nav-cont ul {
-    list-style-type: none; /* Remove list bullets */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 .nav-cont li {
-    display: inline; /* Display list items horizontally */
-    margin-right: 20px; /* Add spacing between list items */
+    display: inline;
+    margin-right: 20px;
 }
+
 .nav-cont {
     display: flex;
     flex-direction: column;
     background-color: white;
-    
 }
 
-/* Improve the hover effect for the "Home" link */
 .home:hover {
-    background-color: #4CAF50; /* Change the background color on hover */
-    color: #ffffff; /* Change text color on hover for better contrast */
-    border-radius: 3px; /* Add rounded corners on hover */
-    transition: background-color 0.2s ease-in-out; /* Smooth transition */
+    background-color: #4CAF50;
+    color: #ffffff;
+    border-radius: 3px;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .about:hover {
-    background-color: #4CAF50; /* Change the background color on hover */
-    color: #ffffff; /* Change text color on hover for better contrast */
-    border-radius: 3px; /* Add rounded corners on hover */
+    background-color: #4CAF50;
+    color: #ffffff;
+    border-radius: 3px;
     transition: background-color 0.2s ease-in-out;
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    .nav-bar {
+        height: 150px;
+    }
+
+    .navhead {
+        font-size: 60px;
+    }
+
+    .nav-cont li {
+        margin-right: 10px;
+    }
 }
