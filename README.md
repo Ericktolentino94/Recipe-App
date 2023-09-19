@@ -19,7 +19,11 @@ Our team was comprised: Alexander Tsiklidis, Erick Tolentino, and James Edmond
 
 ## Group Norms
 
--Our teams’ group norms include maintaining lines of communication with the various team members via slack. ‘Not going ghost’ is important to maintain group coordination. We will meet once a night if possible for 1-2 hours this week. Each member is responsible for helping code the app components and making sure everything works.
+-Our teams’ group norms include maintaining lines of communication with the various team members via slack. ‘Not going ghost’ is important to maintain group coordination. We will meet once a night if possible for 1-2 hours this week. Each member is responsible for helping code the app components and making sure everything works. Each member is responsible for communicating their status with their respective assigned tasks, and any bugs they might be incurring. Each member will be open and responsive with communication and willing to both ask and lend assistance as the project requires.
+
+James and Erick were largely involved with the building of the home page and it's components as well as the nav. Alex largely built the about and recipeshow page with the help of both James and Erick. Erick, Alex and James all had a hand in the styling of all parts of the project.
+
+The responsibilities for all members were listed on trello and were later modified based on member input and project need.
 
 ## Trello Board
 
