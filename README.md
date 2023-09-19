@@ -18,3 +18,5 @@ Our team was comprised: Alexander Tsiklidis, Erick Tolentino, and James Edmond
 [websiteLink](https://visionary-gumption-b861c0.netlify.app/)
 
 
+## Group Norms
+-Our teams’ group norms include maintaining lines of communication with the various team members via slack. ‘Not going ghost’ is important to maintain group coordination. We will meet once a night if possible for 1-2 hours this week. Each member is responsible for helping code the app components and making sure everything works.

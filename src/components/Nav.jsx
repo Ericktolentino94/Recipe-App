@@ -7,7 +7,7 @@ const Nav = () => {
         <nav className="nav-bar">
       <img
         className="header-logo"
-        src="https://static.vecteezy.com/system/resources/previews/007/559/224/original/recipe-food-logo-design-template-free-vector.jpg"
+        src="https://b2066476.smushcdn.com/2066476/wp-content/uploads/2018/10/25698-TSET-19-04-SYF-Website-Refresh_Header_5FoodGroups_F.jpg?lossy=1&strip=1&webp=1"
         height="200px"
         width="300px"
         alt="Recipe Logo"
