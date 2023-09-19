@@ -74,7 +74,7 @@ const Home = ({
   };
 
   return (
-    <div >
+    <div className="container">
       <h1 className="recipe">Recipes</h1>
       <div className="search-container">
         <label htmlFor="search-input" className="search-label">Search:</label>
@@ -94,7 +94,7 @@ const Home = ({
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
             <section className="individualCard" key={recipe.idMeal}>
-              <h1>{recipe.strMeal}</h1>
+              <h1 className="recipeName">{recipe.strMeal}</h1>
               <Link to={`/RecipeShow/${recipe.idMeal}`}>
                 <img
                   src={recipe.strMealThumb}
@@ -103,7 +103,7 @@ const Home = ({
                 />
               </Link>
               <p>{recipe.strInstructions}</p>
-              <button onClick={() => handleRemove(recipe.idMeal)}>Remove</button>
+              <button className="removeButton" onClick={() => handleRemove(recipe.idMeal)}>Remove</button>
             </section>
           ))
         ) : (
