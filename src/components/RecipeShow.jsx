@@ -2,13 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getOneRecipe } from "../api/fetch";
 import "./RecipeShow.css"
-
-
 export default function RecipeShow() {
   const [individual, setIndividual] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
-
   useEffect(() => {
     getOneRecipe(id)
       .then((data) => {
@@ -19,31 +16,25 @@ export default function RecipeShow() {
         console.error("Error fetching recipe:", error);
       });
   }, [id]);
-
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
-
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
-
   const handleCommentChange = (e) => {
     setComment(e.target.value);
   };
-
   const handleCommentSubmit = () => {
     if (name.trim() === "" || comment.trim() === "") {
       alert("Name and comment cannot be empty!");
       return;
     }
-
     const newComment = { name, comment };
     setComments([...comments, newComment]);
     setName("");
     setComment("");
   };
-
   return (
     <div className="container">
       <div className="row">
@@ -78,7 +69,8 @@ export default function RecipeShow() {
                   <p className="ingredientInfo">{recipeinfo.strMeasure9} {recipeinfo.strIngredient9}</p>
                   <p className="ingredientInfo">{recipeinfo.strMeasure10} {recipeinfo.strIngredient10}</p>
                   <p className="ingredientInfo">{recipeinfo.strMeasure11} {recipeinfo.strIngredient11}</p>
-                  <p className="ingredientInfo">{recipeinfo.strMeasure12} {recipeinfo.strIngredient12}</p> 
+                  <p className="ingredientInfo">{recipeinfo.strMeasure12} {recipeinfo.strIngredient12}</p>
+                  <p className="instructions">{recipeinfo.strInstructions}</p>
                 </section>
               ))
             ) : (
@@ -112,7 +104,6 @@ export default function RecipeShow() {
             >
               Add Comment
             </button>
-
             <div>
               <h2 className="commentTitle">Comments:</h2>
               {comments.map((c, index) => (
