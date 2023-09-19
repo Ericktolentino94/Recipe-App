@@ -16,10 +16,11 @@ export default function About() {
         <section className="description">
           <h2 className="descriptionTitle">Description of our Project</h2>
           <p className="trueDescription" >
-            In this project our team created a YouTube clone that allows a user
-            to search for videos using the YouTube API. A user can select videos
-            and watch them. This project is a collaborative effort that includes
-            three claamates using our knowledge of design and React.
+            In this project our team created a Recipe App that allows a user
+            to search for recipes based on ingredients that they already have so they can save money and limit waste. 
+            A user can select images of meals and be taken to a page of that dish with more information on that recipe.
+            This project also has some other great unique features and is a collaborative effort that includes
+            three classmates using our knowledge of design and React.
           </p>
         </section>
         <ul className="team-Cards">
@@ -33,7 +34,7 @@ export default function About() {
                 </Link>
               </button>
               <p>
-                Erick Tolentino has studied Computer Science, Digital Marketing and
+                Erick Tolentino has studied Computer Science, Finance and
                 is also a Full Stack Developer
               </p>
             </li>

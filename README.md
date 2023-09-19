@@ -1,6 +1,6 @@
 # Ingredient Saving Recipe App
 
--Have you ever gone to the grocery store with great intentions, bought a fridge full of things, and then a watch all of that great produce turn into a science experiment in your fridge in a week or so?
+-Have you ever gone to the grocery store with great intentions, bought a fridge full of things, and then a watch all of that great produce turn into a science experiment in a week or so?
 
 -If you have, you are not alone
 
