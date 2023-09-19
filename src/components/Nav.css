@@ -1,10 +1,47 @@
+/* Improve the styling for the navigation bar */
 .nav-bar {
     display: flex;
     flex-direction: column;
-    border-bottom: 2px solid black;
-    background-color: white;
+    justify-content: space-between; /* Horizontally center elements */
     align-items: center;
+    padding: 10px 20px; /* Add padding for better spacing */
+    background-color: #ffffff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
+
+/* Style the header logo */
+.header-logo {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Style the navigation heading */
+.navhead {
+    font-size: 24px; /* Increase font size for better readability */
+    font-weight: bold; /* Make the heading bold */
+    margin: 0; /* Remove default margin */
+}
+
+/* Style the navigation links */
+.nav-cont ul {
+    list-style-type: none; /* Remove list bullets */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-cont li {
+    display: inline; /* Display list items horizontally */
+    margin-right: 20px; /* Add spacing between list items */
+}
+.nav-cont {
+    display: flex;
+    
+}
+
+/* Improve the hover effect for the "Home" link */
 .home:hover {
-    background-color: green;
+    background-color: #4CAF50; /* Change the background color on hover */
+    color: #ffffff; /* Change text color on hover for better contrast */
+    border-radius: 3px; /* Add rounded corners on hover */
+    transition: background-color 0.2s ease-in-out; /* Smooth transition */
 }
