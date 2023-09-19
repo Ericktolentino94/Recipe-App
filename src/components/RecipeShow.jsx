@@ -10,7 +10,6 @@ export default function RecipeShow() {
 
   useEffect(() => {
     getOneRecipe(id)
-
       .then((data) => {
         console.log("Data received:", data);
         setIndividual(data);
@@ -19,23 +18,46 @@ export default function RecipeShow() {
         console.error("Error fetching recipe:", error);
       });
   }, [id]);
-  
 
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleCommentChange = (e) => {
+    setComment(e.target.value);
+  };
+
+  const handleCommentSubmit = () => {
+    if (name.trim() === "" || comment.trim() === "") {
+      alert("Name and comment cannot be empty!");
+      return;
+    }
+
+    const newComment = { name, comment };
+    setComments([...comments, newComment]);
+    setName("");
+    setComment("");
+  };
 
   return (
     <div>
-        <div className="recipeShow">
+      <div className="recipeShow">
         {individual.length > 0 ? (
           individual.map((recipeinfo) => (
-
             <section className="individualRecipeCard" key={recipeinfo.idMeal}>
-                <h1>{recipeinfo.strMeal}</h1>
+              <h1>{recipeinfo.strMeal}</h1>
               <img
                 src={recipeinfo.strMealThumb}
                 alt={recipeinfo.strMeal}
                 style={{ height: "200px" }}
               />
-              <a href={recipeinfo.strYoutube}>Youtube Video for {recipeinfo.strMeal}</a>
+              <a href={recipeinfo.strYoutube}>
+                Youtube Video for {recipeinfo.strMeal}
+              </a>
               <p>{recipeinfo.strMeasure1} {recipeinfo.strIngredient1}</p>
               <p>{recipeinfo.strMeasure2} {recipeinfo.strIngredient2}</p>
               <p>{recipeinfo.strMeasure3} {recipeinfo.strIngredient3}</p>
@@ -53,11 +75,30 @@ export default function RecipeShow() {
         ) : (
           <p className="non-search">No recipe found. Try a different recipe</p>
         )}
-        </div>
-        <div>
-            {/* <commentForm /> */}
-        </div>
-    </div>
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={handleNameChange}
+        />
+        <textarea
+          placeholder="Add a comment"
+          value={comment}
+          onChange={handleCommentChange}
+        />
+        <button onClick={handleCommentSubmit}>Add Comment</button>
 
-)
+        <div>
+          <h2>Comments:</h2>
+          {comments.map((c, index) => (
+            <div key={index}>
+              <strong>{c.name}</strong>: {c.comment}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
