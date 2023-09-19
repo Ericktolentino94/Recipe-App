@@ -1,34 +1,132 @@
-body {
+
+
+.container {
+    padding: 20px;
     background-color: lightblue;
-}
-
-.individualRecipeCard {
-    border: 2px solid black;
-    /* align-items: center; */
-    
-    
-}
-
-p {
-    border-bottom: 1px solid black;
+  }
+  
+ 
+  .individualRecipeCard {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .mealName {
+    font-size: 40px;
+    margin-bottom: 10px;
     text-align: center;
-}
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: underline
+  }
+  .mealName:hover {
+    color: green
+  }
+  
+  
+  .mealImage  {
+    display: flex;
 
-.mealName{
-    text-align: center;
-}
-
-/* img {
-    justify-content: center;
-} */
-
-h3.ingredientsHeading {
-    text-align: center ;
-}
-
-.youtubeLink #text {
-    text-align: center;
-}
-.mealImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+ 
+  .youtubeLink {
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: lightblue;
+    font-size: 20px
+  }
+  .youtubeLink:hover {
+    background-color: green;
+  }
+  
+  
+  .form-container {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+  .commentTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
+  
+  
+  .submitComment {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  
+  h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .comments {
+    margin-bottom: 10px;
+  }
+  
+  .comments strong {
+    font-weight: bold;
+  }
+  
+
+
+  p.ingredientInfo {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  h2.ingredientsTitle {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
