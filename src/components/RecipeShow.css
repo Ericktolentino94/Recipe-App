@@ -5,30 +5,30 @@
   
  
   .individualRecipeCard {
-    background-color: #fff;
+    background-color: lightyellow;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px 20px 30px 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   }
   
   
   .mealName {
     font-size: 40px;
     margin-bottom: 10px;
-    text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-decoration: underline
+    text-decoration: underline;
+    color: green;
+   text-align: center;
   }
   .mealName:hover {
-    color: green
+    color: lightblue
   }
   
   
   .mealImage  {
     display: flex;
-
-    max-width: 100%;
     height: auto;
     border-radius: 5px;
     align-items: center;
@@ -41,16 +41,16 @@
     display: block;
     margin-top: 10px;
     text-decoration: underline;
-    color: lightblue;
+    color: green;
     font-size: 20px
   }
   .youtubeLink:hover {
-    background-color: green;
+    background-color: lightblue;
   }
   
   
   .form-container {
-    background-color: #fff;
+    background-color: lightyellow;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -98,11 +98,15 @@
   
   .comments {
     margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
   }
   
   .comments strong {
     font-weight: bold;
-  }
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
   
 
 
@@ -129,6 +133,14 @@
   }
   
   .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: green;
     border-color: #0056b3;
+  }
+  .mb-2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+  }
+  .commentTitle{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
   }

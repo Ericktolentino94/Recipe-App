@@ -114,7 +114,7 @@ export default function RecipeShow() {
             </button>
 
             <div>
-              <h2>Comments:</h2>
+              <h2 className="commentTitle">Comments:</h2>
               {comments.map((c, index) => (
                 <div key={index} className="mb-2">
                   <strong>{c.name}</strong>: {c.comment}
