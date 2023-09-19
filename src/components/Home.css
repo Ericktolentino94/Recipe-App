@@ -161,7 +161,7 @@
   }
 
   .formDescriptors {
-    color: lightgreen;
+    color: green;
   }
   .formDescriptors:hover {
     color: blue;

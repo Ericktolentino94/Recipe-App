@@ -1,0 +1,57 @@
+.aboutContainer {
+    border: 30px solid black;
+  }
+  
+  .team-card {
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  .team-card-et {
+    border: 2px solid rgb(41, 165, 41);
+    padding: 15px;
+    list-style: none;
+  }
+  
+  .etbtn:hover {
+    background-color: green;
+    color: greenyellow;
+    text-align: center;
+  }
+  
+  .team-card-at {
+    border: 2px solid rgb(67, 31, 226);
+    padding: 15px;
+    list-style: none;
+  }
+  
+  .atbtn:hover {
+    color: blue;
+    background-color: cornflowerblue;
+  }
+  
+  .team-card-je {
+    border: 2px solid rgba(219, 72, 99, 0.382);
+    padding: 15px;
+    list-style: none;
+  }
+  
+  .jebtn:hover {
+    background-color: rgb(232, 165, 165);
+  }
+  .aboutTitle1 {
+    text-align: center;
+    align-items: center;
+    
+  }
+
+  .descriptionTitle {
+    text-align: center;
+    color: green;
+    text-decoration: underline;
+  }
+
+  .memberName{
+    color:green
+  }
+  
