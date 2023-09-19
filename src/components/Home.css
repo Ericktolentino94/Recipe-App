@@ -14,15 +14,18 @@
     text-decoration: underline;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 50px;
+    text-align: center;
+    color: green;
   }
   .recipe:hover {
-    color: green;
+    color: blue;
   }
   
   .form-container h2 {
     margin-bottom: 10px;
     
   }
+  
   
   /* Style for individual cards */
   .individualCard {
@@ -73,6 +76,7 @@
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     padding: 10px;
+    
   }
   
   .search-label {
@@ -142,6 +146,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: underline;
+    color: green;
+    font-size: 30px;
+  }
+  .createRecipe:hover {
+    color: blue;
   }
 
   .recipe {
@@ -149,6 +159,14 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .formDescriptors {
+    color: green;
+  }
+  .formDescriptors:hover {
+    color: blue;
+  }
+  
   /* You can add more styles as needed */
   
   

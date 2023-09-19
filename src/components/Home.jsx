@@ -75,7 +75,7 @@ const Home = ({
 
   return (
     <div className="container">
-      <h1 className="recipe">Recipes</h1>
+      <h1 className="recipe">Ingredient Saving Recipes</h1>
       <div className="search-container">
         <label htmlFor="search-input" className="search-label">Search:</label>
         <input
@@ -114,7 +114,7 @@ const Home = ({
       </div>
       <h2 className="createRecipe">Create A Recipe</h2>
       <form onSubmit={handleSubmit} className="form-container">
-        <label htmlFor="name">Name:</label>
+        <label className="formDescriptors"htmlFor="name">Name:</label>
         <input
           type="text"
           id="name"
@@ -123,7 +123,7 @@ const Home = ({
           onChange={handleChange}
         />
 
-        <label htmlFor="imageUrl">Image URL:</label>
+        <label className="formDescriptors" htmlFor="imageUrl">Image URL:</label>
         <input
           type="url"
           id="imageUrl"
@@ -132,7 +132,7 @@ const Home = ({
           onChange={handleChange}
         />
 
-        <label htmlFor="summary">Summary:</label>
+        <label className="formDescriptors" htmlFor="summary">Summary:</label>
         <textarea
           id="summary"
           name="summary"
