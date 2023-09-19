@@ -74,7 +74,7 @@ const Home = ({
   };
 
   return (
-    <div>
+    <div >
       <h1 className="recipe">Recipes</h1>
       <div className="search-container">
         <label htmlFor="search-input" className="search-label">Search:</label>
