@@ -49,13 +49,15 @@ export default function RecipeShow() {
         {individual.length > 0 ? (
           individual.map((recipeinfo) => (
             <section className="individualRecipeCard" key={recipeinfo.idMeal}>
-              <h1>{recipeinfo.strMeal}</h1>
-              <img
+              <h1 className="mealName">{recipeinfo.strMeal}</h1>
+              <img 
+              className="mealImage"
                 src={recipeinfo.strMealThumb}
                 alt={recipeinfo.strMeal}
                 style={{ height: "200px" }}
               />
-              <a href={recipeinfo.strYoutube}>
+              <br />
+              <a className="youtubeLink" href={recipeinfo.strYoutube}>
                 Youtube Video for {recipeinfo.strMeal}
               </a>
               <p>{recipeinfo.strMeasure1} {recipeinfo.strIngredient1}</p>
