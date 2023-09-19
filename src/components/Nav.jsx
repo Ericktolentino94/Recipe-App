@@ -18,6 +18,9 @@ const Nav = () => {
         <li className='home'>
           <Link to="/">Home</Link>
         </li>
+        <li className='about'>
+          <Link to ="/about">About</Link>
+        </li>
       </ul>
     </nav>
     );
