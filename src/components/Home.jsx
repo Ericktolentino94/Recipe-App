@@ -87,17 +87,27 @@ const Home = ({
       </button>
       <h1>Recipes</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
+        <div>
+          <div className="input"></div>
+          <label htmlFor="name">Name:</label>
+          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
+        </div>
 
-        <label htmlFor="imageUrl">Image URL:</label>
-        <input type="url" id="imageUrl" name="imageUrl" value={formData.imageUrl} onChange={handleChange} />
+        <div>
+          <label htmlFor="imageUrl">Image URL:</label>
+          <input type="url" id="imageUrl" name="imageUrl" value={formData.imageUrl} onChange={handleChange} />
+        </div>
 
+        <div>
         <label htmlFor="summary">Summary:</label>
         <textarea id="summary" name="summary" value={formData.summary} onChange={handleChange} />
-
+        </div>
+        <div>
         <button type="submit">Submit</button>
+        </div>
+
       </form>
+
       <div>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (

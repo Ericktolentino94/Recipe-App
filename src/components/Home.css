@@ -1,5 +1,36 @@
+body {
+    background-color: lightblue;
+}
+
 .individualCard {
-    display: flex;
+    border: 2px solid black;
+    /* align-items: center; */
+    grid-template-columns: repeat(3, 30%);
+    display: flexbox;
     flex-direction: column;
+    
+}
+
+p {
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.mealName{
+    text-align: center;
+}
+
+/* img {
+    justify-content: center;
+} */
+
+h3.ingredientsHeading {
+    text-align: center ;
+}
+
+.youtubeLink #text {
+    text-align: center;
+}
+.mealImage {
     align-items: center;
 }
