@@ -75,29 +75,21 @@ const Home = ({
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search for Recipes"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        className="search-bar"
-      />
-      <button onClick={handleSearch} className="btn">
-        Search
-      </button>
-      <h1>Recipes</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
-
-        <label htmlFor="imageUrl">Image URL:</label>
-        <input type="url" id="imageUrl" name="imageUrl" value={formData.imageUrl} onChange={handleChange} />
-
-        <label htmlFor="summary">Summary:</label>
-        <textarea id="summary" name="summary" value={formData.summary} onChange={handleChange} />
-
-        <button type="submit">Submit</button>
-      </form>
+      <h1 className="recipe">Recipes</h1>
+      <div className="search-container">
+        <label htmlFor="search-input" className="search-label">Search:</label>
+        <input
+          type="text"
+          id="search-input"
+          className="search-bar-input"
+          placeholder="Search for Recipes..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <button type="submit" className="search-bar-button" onClick={handleSearch}>
+          Search
+        </button>
+      </div>
       <div>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
@@ -120,6 +112,36 @@ const Home = ({
           </p>
         )}
       </div>
+      <h2 className="createRecipe">Create A Recipe</h2>
+      <form onSubmit={handleSubmit} className="form-container">
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="imageUrl">Image URL:</label>
+        <input
+          type="url"
+          id="imageUrl"
+          name="imageUrl"
+          value={formData.imageUrl}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="summary">Summary:</label>
+        <textarea
+          id="summary"
+          name="summary"
+          value={formData.summary}
+          onChange={handleChange}
+        />
+
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
