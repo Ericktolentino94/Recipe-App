@@ -2,29 +2,34 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getOneRecipe } from "../api/fetch";
 import "./RecipeShow.css"
+
 export default function RecipeShow() {
   const [individual, setIndividual] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
+
   useEffect(() => {
     getOneRecipe(id)
       .then((data) => {
-        console.log("Data received:", data);
         setIndividual(data);
       })
       .catch((error) => {
         console.error("Error fetching recipe:", error);
       });
   }, [id]);
+
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
+
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
+
   const handleCommentChange = (e) => {
     setComment(e.target.value);
   };
+
   const handleCommentSubmit = () => {
     if (name.trim() === "" || comment.trim() === "") {
       alert("Name and comment cannot be empty!");
@@ -35,6 +40,7 @@ export default function RecipeShow() {
     setName("");
     setComment("");
   };
+
   return (
     <div className="container">
       <div className="row">
