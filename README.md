@@ -4,7 +4,7 @@
 
 -If you have, you are not alone
 
--We all want to eat healthy and shopping for food and preparing it for ourselves often represents the greatest oppurtunity at a healthy diet. 
+-We all want to eat healthy and shopping for food and preparing it for ourselves often represents the greatest oppurtunity at a healthy diet.
 
 -But what happens when we don't know how to make these groceries, what will we do then?! It almost seems inevitable that our food will expire now, whatever will we do!?
 
@@ -12,11 +12,27 @@
 
 Our team was comprised: Alexander Tsiklidis, Erick Tolentino, and James Edmond
 
-## Link Deploy 
+## Link Deploy
 
--Come visit our website on 
+-Come visit our website on
 [websiteLink](https://visionary-gumption-b861c0.netlify.app/)
 
-
 ## Group Norms
--Our teams’ group norms include maintaining lines of communication with the various team members via slack. ‘Not going ghost’ is important to maintain group coordination. We will meet once a night if possible for 1-2 hours this week. Each member is responsible for helping code the app components and making sure everything works.
+
+-Our teams’ group norms include maintaining lines of communication with the various team members via slack. ‘Not going ghost’ is important to maintain group coordination. We will meet once a night if possible for 1-2 hours this week. Each member is responsible for helping code the app components and making sure everything works. Each member is responsible for communicating their status with their respective assigned tasks, and any bugs they might be incurring. Each member will be open and responsive with communication and willing to both ask and lend assistance as the project requires.
+
+James and Erick were largely involved with the building of the home page and it's components as well as the nav. Alex largely built the about and recipeshow page with the help of both James and Erick. Erick, Alex and James all had a hand in the styling of all parts of the project.
+
+The responsibilities for all members were listed on trello and were later modified based on member input and project need.
+
+## Trello Board
+
+Here is out Trello (https://trello.com/b/zqt3LP9d/reverse-recipe-team); A lot of tasks needed to be reassigned.
+
+## Wireframes
+
+Here are our wireframes using Miro (https://miro.com/app/board/uXjVMmMfNos=/?share_link_id=72311141956); these were modified a bit for our app
+
+## Component Architecture
+
+Here is the our component architecture (https://www.canva.com/design/DAFuLh8mXEE/pqvcZtVYBE5HaFpLTRetDQ/edit); these were modified a bit for our app.
