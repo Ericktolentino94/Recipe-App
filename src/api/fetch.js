@@ -2,7 +2,7 @@ const KEY = import.meta.env.VITE_BASE_API_KEY
 const _BASE_URL = `https://www.themealdb.com/api/json/v2/${KEY}/`;
 
 export function getAllRecipes() {
-  const endpoint = "randomselection.php";
+  const endpoint = "search.php?s=curry";
   const url = `${_BASE_URL}${endpoint}`;
 
   return fetch(url)
