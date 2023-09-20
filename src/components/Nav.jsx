@@ -8,8 +8,6 @@ const Nav = () => {
             <div>
       </div>
       <div className='nav-cont'>
-      <h1 className='navhead'>The Recipe App</h1>
-
       <ul>
         <li className='home'>
           <Link to="/">Home</Link>
