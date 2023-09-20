@@ -89,6 +89,10 @@
     border: none;
     outline: none;
   }
+  .search-bar-input {
+    padding: 10px;
+    margin-right: 10px;
+  }
   
   .search-bar-button {
     background-color: #007bff;
