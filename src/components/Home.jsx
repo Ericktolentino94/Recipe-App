@@ -75,7 +75,6 @@ const Home = ({
 
   return (
     <div className="container">
-      <h1 className="recipe">Ingredient Saving Recipes</h1>
       <div className="search-container">
         <label htmlFor="search-input" className="search-label">Search:</label>
         <input
@@ -91,6 +90,7 @@ const Home = ({
         </button>
       </div>
       <div>
+      <h1 className="recipe">Ingredient Saving Recipes</h1>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
             <section className="individualCard" key={recipe.idMeal}>
