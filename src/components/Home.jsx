@@ -11,38 +11,45 @@ const Home = ({
   searchedQuery,
   setSearchedQuery,
 }) => {
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      if (searchedQuery.trim() === "") {
-        try {
-          const data = await getAllRecipes();
-          if (data) {
-            setRecipes(data);
-          }
-        } catch (error) {
-          console.error("Error fetching recipes:", error);
-        }
-      } else {
-        const KEY = import.meta.env.VITE_BASE_API_KEY;
-        try {
-          const response = await fetch(
-            `https://www.themealdb.com/api/json/v2/${KEY}/search.php?s=${searchedQuery}`
-          );
-          const data = await response.json();
-          if (data.meals) {
-            setRecipes(data.meals);
+    useEffect(() => {
+        const fetchRecipes = () => {
+          if (searchedQuery.trim() === "") {
+            getAllRecipes()
+              .then((data) => {
+                if (data) {
+                  setRecipes(data);
+                }
+              })
+              .catch((error) => {
+                console.error("Error fetching recipes:", error);
+              });
           } else {
-            setRecipes([]);
+            const KEY = import.meta.env.VITE_BASE_API_KEY;
+            fetch(
+              `https://www.themealdb.com/api/json/v2/${KEY}/search.php?s=${searchedQuery}`
+            )
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+              })
+              .then((data) => {
+                if (data.meals) {
+                  setRecipes(data.meals);
+                } else {
+                  setRecipes([]);
+                }
+              })
+              .catch((error) => {
+                console.error("Error fetching recipes:", error);
+              });
           }
-        } catch (error) {
-          console.error("Error fetching recipes:", error);
-        }
-      }
-    };
-
-    fetchRecipes();
-  }, [searchedQuery, setRecipes]);
-
+        };
+      
+        fetchRecipes();
+      }, [searchedQuery, setRecipes]);
+      
   const handleSearch = () => {
     setSearchedQuery(searchQuery);
   };

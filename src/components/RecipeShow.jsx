@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { getOneRecipe } from "../api/fetch";
 import "./RecipeShow.css"
 
 export default function RecipeShow() {
   const [individual, setIndividual] = useState([]);
   const { id } = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
     getOneRecipe(id)
