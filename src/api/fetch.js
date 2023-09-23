@@ -7,13 +7,13 @@ export function getAllRecipes() {
 
   return fetch(url)
     .then((response) => {
-      if (!response.ok) {
+      if (!response) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       return response.json();
     })
     .then((data) => {
-      if (data.meals && Array.isArray(data.meals)) {
+      if (data.meals) {
         return data.meals;
       } else {
         throw new Error("Invalid API response: 'meals' property not found.");
@@ -21,7 +21,6 @@ export function getAllRecipes() {
     })
     .catch((error) => {
       console.error("Fetch error:", error);
-      throw error;
     });
 }
 
